@@ -1,16 +1,16 @@
-import { dispatch } from '..';
+import { dispatch } from "..";
 
 export enum CounterActionTypes {
-  Increment = 'increment',
-  Decrement = 'decrement'
+  Increment = "increment",
+  Decrement = "decrement",
 }
 
 export const increment = () =>
   dispatch({
-    type: CounterActionTypes.Increment
+    type: CounterActionTypes.Increment,
   });
 
 export const decrement = () =>
   dispatch({
-    type: CounterActionTypes.Decrement
+    type: CounterActionTypes.Decrement,
   });

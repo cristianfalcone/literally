@@ -1,4 +1,4 @@
-import { bootstrap } from './app';
-import { app } from './app/templates';
+import { bootstrap } from "./app";
+import { app } from "./app/templates";
 
-bootstrap(app, document.getElementById('app'));
+bootstrap(app, document.getElementById("app"));

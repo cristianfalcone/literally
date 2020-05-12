@@ -1,9 +1,9 @@
-import { html } from 'lit-html/lib/lit-extended';
-import { decrement, increment } from '../actions';
-import { State } from '../reducers';
+import { html } from "lit-html";
+import { decrement, increment } from "../actions";
+import { State } from "../reducers";
 
-export const app = ({count}: State) => html`
-  <button type="button" on-click=${decrement}>-</button>
+export const app = ({ count }: State) => html`
+  <button type="button" @click=${decrement}>-</button>
   ${count}
-  <button type="button" on-click=${increment}>+</button>
+  <button type="button" @click=${increment}>+</button>
 `;

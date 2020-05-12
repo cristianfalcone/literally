@@ -2,7 +2,7 @@ export interface Stream<T> {
   run: RunStream<T>;
 }
 
-export type RunStream<T> = (sink: Sink<T>, scheduler: Scheduler) => Disposable
+export type RunStream<T> = (sink: Sink<T>, scheduler: Scheduler) => Disposable;
 
 export interface Sink<T> {
   event(time: Time, value: T): void;
@@ -12,7 +12,12 @@ export interface Sink<T> {
 
 export interface Scheduler {
   currentTime(): Time;
-  scheduleTask (offset: Offset, delay: Delay, period: Period, task: Task): ScheduledTask;
+  scheduleTask(
+    offset: Offset,
+    delay: Delay,
+    period: Period,
+    task: Task
+  ): ScheduledTask;
   relative(offset: Offset): Scheduler;
   cancel(task: ScheduledTask): void;
   cancelAll(predicate: (task: ScheduledTask) => boolean): void;
@@ -27,7 +32,7 @@ export interface Disposable {
 export type Time = number;
 
 // Relative offset between two clocks / schedulers
-export type Offset = number
+export type Offset = number;
 
 // Delay time offset
 export type Delay = number;
@@ -48,10 +53,10 @@ export interface ScheduledTask {
   dispose(): void;
 }
 
-export const newStream = <T>(run: RunStream<T>): Stream<T> => ({run});
+export const newStream = <T>(run: RunStream<T>): Stream<T> => ({ run });
 
 const event$ = newStream<boolean>(() => {
   return {
-    dispose: () => {}
-  }
+    dispose: () => {},
+  };
 });

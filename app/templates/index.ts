@@ -1,1 +1,1 @@
-export * from './app.template'
+export * from "./app.template";
